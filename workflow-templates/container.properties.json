@@ -1,0 +1,7 @@
+{
+  "name": "spudoss-org container image",
+  "description": "Build, scan, sign and push an image to GHCR via shared-workflows.",
+  "iconName": "octicon package",
+  "categories": ["Continuous integration", "Dockerfile"],
+  "filePatterns": ["Dockerfile$"]
+}

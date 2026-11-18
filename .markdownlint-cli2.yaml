@@ -1,0 +1,5 @@
+config:
+  default: true
+  MD013: false        # line length: prose wraps naturally
+  MD033: false        # inline HTML (comments in templates)
+  MD041: false        # first line heading: templates start with comments

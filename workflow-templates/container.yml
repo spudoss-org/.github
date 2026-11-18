@@ -1,0 +1,22 @@
+name: Container
+
+on:
+  pull_request:
+  push:
+    branches: [$default-branch]
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  image:
+    uses: spudoss-org/shared-workflows/.github/workflows/reusable-container.yml@v1
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
+    with:
+      image-name: ${{ github.event.repository.name }}
+      push: ${{ github.event_name != 'pull_request' }}

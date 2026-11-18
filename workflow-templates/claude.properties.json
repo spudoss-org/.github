@@ -1,0 +1,6 @@
+{
+  "name": "spudoss-org Claude agent",
+  "description": "@claude mentions, agent:plan / agent:implement labels and automated PR review.",
+  "iconName": "octicon dependabot",
+  "categories": ["Automation"]
+}

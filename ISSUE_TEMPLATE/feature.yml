@@ -1,0 +1,48 @@
+name: Feature / change
+description: A spec an agent (or person) can implement without guessing.
+title: "feat: "
+labels: ["type:feature", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is the prompt. Be concrete: an agent will plan and implement from exactly what is written here.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / goal
+      description: What is wrong or missing, and who it affects.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: Testable statements. Each should map to a test or a check.
+      placeholder: |
+        - [ ] Given ..., when ..., then ...
+        - [ ] `make check` passes
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What the implementation must NOT change. Prevents agent scope creep.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context & constraints
+      description: Relevant files, ADRs, interfaces, prior art, performance or security constraints.
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk
+      options:
+        - Low (docs, tests, isolated code)
+        - Medium (behaviour change in one component)
+        - High (infra, security, shared interfaces, data)
+    validations:
+      required: true

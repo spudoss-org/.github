@@ -1,0 +1,35 @@
+name: Bug
+description: Something behaves differently from what is expected.
+title: "fix: "
+labels: ["type:bug", "status:needs-triage"]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behaviour
+      description: Include error messages, logs, trace IDs.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Minimal, copy-pasteable. An agent will turn this into a failing test first.
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Cluster / environment / version / commit SHA
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: Related problems that should not be fixed in this change.

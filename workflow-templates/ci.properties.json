@@ -1,0 +1,6 @@
+{
+  "name": "spudoss-org CI",
+  "description": "Org-standard lint for docs, YAML and workflows via shared-workflows.",
+  "iconName": "octicon check-circle",
+  "categories": ["Continuous integration"]
+}
