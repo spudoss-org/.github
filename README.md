@@ -3,7 +3,7 @@
 Organization-wide defaults for **spudoss-org**. GitHub applies the files in this repo to every repo in the org that does not define its own.
 
 | Path | Effect |
-|---|---|
+| --- | --- |
 | `profile/README.md` | Public org profile page |
 | `ISSUE_TEMPLATE/` | Default issue forms (agent-ready specs) |
 | `PULL_REQUEST_TEMPLATE.md` | Default PR description |

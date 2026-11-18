@@ -9,6 +9,7 @@ Closes #
 <!-- What could break, and how to undo it. "Low — docs only" is fine. -->
 
 ## Checklist
+
 - [ ] One concern per PR; title follows Conventional Commits
 - [ ] Tests added or updated for behaviour changes
 - [ ] Docs / ADR updated if a decision or interface changed
