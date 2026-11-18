@@ -1,5 +1,8 @@
 name: CI
 
+# This repo is public, and public repos cannot call reusable workflows in private
+# repos, so the lint steps are inlined here instead of using shared-workflows.
+
 on:
   pull_request:
   push:
@@ -10,4 +13,18 @@ permissions:
 
 jobs:
   lint:
-    uses: spudoss-org/shared-workflows/.github/workflows/reusable-lint.yml@v1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: actionlint
+        uses: docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 # 1.7.12
+        with:
+          args: -color .github/workflows/ci.yml
+      - name: yamllint
+        run: pipx run yamllint --strict .
+      - name: markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@696eb3f2509270d7b882d2aa68347bc676e7af34 # v25.0.0
+        with:
+          globs: "**/*.md"
